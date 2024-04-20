@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Booking {
+public class Booking{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Genererer primærnøkkel automatisk
     private Long id; // Primærnøkkel
