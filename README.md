@@ -4,7 +4,7 @@
 
 **GitHub brukernavn:** HeleneBrandt
 
-**GitHub Repo:** Oblig3
+**GitHub Repo:** https://github.com/brandtHelene/Oblig3
 
 **Navn:** Helene Rebekka Brandtzæg
 
