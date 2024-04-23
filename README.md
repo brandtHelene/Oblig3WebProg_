@@ -6,6 +6,8 @@
 
 **Navn:** Helene Rebekka Brandtzæg
 
+**Link til Youtube:** https://youtu.be/oD8D54zJpbA 
+
 # **DATA1700 Webprogrammering Kinobillettbestilling**
 
 Dette prosjektet er en JavaScript-applikasjon for å registrere kjøp av kinobilletter. 
