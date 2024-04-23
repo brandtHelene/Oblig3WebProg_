@@ -1,5 +1,3 @@
-
-
 const filmSelect = document.getElementById('film');
 const antallInput = document.getElementById('antall');
 const fornavnInput = document.getElementById('fornavn');
@@ -87,6 +85,23 @@ function oppdaterBilletter() {
     });
 }
 
+function slettAlleBilletter() {
+    $.ajax({
+        type: "DELETE",
+        url: "/bookings",
+        success: function () {
+            console.log("Alle bookinger slettet vellykket");
+            billetter.length = 0; // Tømmer den lokale listen over billetter
+            oppdaterBilletter(); // Oppdater visningen av billetter på skjermen
+            resetFeilmeldinger(); // Tilbakestill feilmeldinger
+            nullstillInputFelter(); // Nullstill inputfeltene
+        },
+        error: function () {
+            console.error("Feil ved sletting av alle bookinger");
+        }
+    });
+}
+
 function nullstillInputFelter(){
     filmSelect.value = ""
     antallInput.value = ""
@@ -94,13 +109,6 @@ function nullstillInputFelter(){
     etternavnInput.value = ""
     telefonInput.value = ""
     epostInput.value = ""
-}
-
-function slettAlleBilletter() {
-    billetter.length = 0;
-    oppdaterBilletter();
-    resetFeilmeldinger();
-    nullstillInputFelter();
 }
 
 function leggTilBillett() {
@@ -121,14 +129,12 @@ function leggTilBillett() {
             data: JSON.stringify(billett),
             success: function () {
                 console.log("Booking added successfully");
+                billetter.push(billett); // Add the booked ticket to the local list
                 oppdaterBilletter(); // Refresh bookings after adding
-
             },
             error: function () {
                 console.error("Error adding booking");
-
             }
         });
-
     }
 }
